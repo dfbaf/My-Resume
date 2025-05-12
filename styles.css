@@ -1,0 +1,256 @@
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+p {
+  margin-bottom: 1.5em; /* Adds space between paragraphs */
+  line-height: 1.6; /* Improves readability */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  opacity: 0.9;
+  margin: 10px 0;
+}
+
+.contact-info {
+  margin: 15px 0;
+}
+
+.contact-info p {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5em;
+  margin: 0 10px;
+  transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+  opacity: 0.8;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: #2c3e50;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar a i {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+.navbar a:hover {
+  color: #3498db;
+  transform: scale(1.1);
+}
+
+/* Sections */
+section {
+  background: white;
+  margin: 20px 0;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Create 2 equal columns */
+  gap: 20px; /* Add spacing between grid items */
+}
+
+.skills-grid div {
+  background: #f9f9f9; /* Optional: Add a background for better visibility */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Experience & Projects */
+.job, .project, .education-item {
+  margin-bottom: 20px;
+}
+
+.job-title, .date {
+  font-style: italic;
+  color: #555;
+  margin: 5px 0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+}
+
+.btn {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-info p {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+#education h3, #education p {
+  line-height: 1.4; /* Adjust the line spacing (1.4 is an example value) */
+}
+
+#projects h3, #projects p {
+  line-height: 1; /* Adjust the line spacing (1.4 is an example value) */
+}
+
+
+
+#education-skills {
+  display: flex;
+  gap: 20px; /* Space between the two columns */
+}
+
+#education, #skills {
+  flex: 1; /* Make both columns take equal width */
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#education h2, #skills h2 {
+  text-align: center;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+h3 + h4 {
+  margin-top: 0.2em; /* Adjust the top margin of <h4> */
+  line-height: 0.01; /* Adjust the line spacing */
+}
+
+#summary p {
+  text-align: justify; /* Justifies the text in the <p> elements within the #summary section */
+}
+
+#experience ul {
+  text-align: justify; /* Justifies the text in the <ul> inside the #experience section */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* Space between grid items */
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.project-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.project-card .date {
+  color: #555;
+  font-size: 0.9em;
+}
+
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* 1 column for small screens */
+  }
+}
