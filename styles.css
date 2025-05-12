@@ -1,11 +1,21 @@
 /* Base Styles */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+  --border-radius: 8px;
+  --padding: 20px;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-color);
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
   font-size: 16px; /* Base font size */
 }
 
@@ -19,12 +29,12 @@ p {
   width: 90%; /* Use percentage instead of fixed width */
   max-width: 1200px; /* Limit the maximum width */
   margin: 0 auto; /* Center the container */
-  padding: 20px;
+  padding: var(--padding);
 }
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #2c3e50, #3498db);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
   color: white;
   padding: 40px 0;
   text-align: center;
@@ -57,15 +67,15 @@ header h1 {
   transition: opacity 0.3s;
 }
 
-social-links a:hover {
+.social-links a:hover {
   opacity: 0.8;
 }
 
 /* Navigation Bar */
 .navbar {
-  background: #2c3e50;
+  background: var(--secondary-color);
   padding: 10px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }
 
 .navbar ul {
@@ -95,22 +105,24 @@ social-links a:hover {
 }
 
 .navbar a:hover {
-  color: #3498db;
+  color: var(--primary-color);
   transform: scale(1.1);
 }
 
+/* TGK2 */
 /* Sections */
 section {
   background: white;
   margin: 20px 0;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: var(--padding); /* Match the padding of #education and #skills */
+  border-radius: var(--border-radius); /* Match the border-radius */
+  box-shadow: var(--box-shadow); /* Match the shadow */
+  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 h2 {
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 10px;
   margin-top: 0;
 }
@@ -118,18 +130,17 @@ h2 {
 
 /* Skills Grid */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible columns */
-  gap: 20px; /* Space between grid items */
+  display: block; /* Remove the grid layout */
   margin-top: 20px;
 }
 
 .skills-grid div {
-  background: #f9f9f9; /* Optional: Add a background for better visibility */
+  background: var(--background-color); /* Optional: Add a background for better visibility */
   padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow); /* Optional: Add a subtle shadow */
   text-align: center;
+  margin-bottom: 20px; /* Add spacing between items */
 }
 
 .skills-grid h3 {
@@ -166,14 +177,14 @@ ul {
 /* Footer */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #2c3e50;
+  padding: var(--padding);
+  background: var(--secondary-color);
   color: white;
 }
 
 .btn {
   display: inline-block;
-  background: #3498db;
+  background: var(--primary-color);
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -209,6 +220,10 @@ footer {
   .job {
     padding: 10px; /* Reduce padding for smaller screens */
   }
+
+  section {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
 }
 
 #education h3, #education p {
@@ -219,25 +234,36 @@ footer {
   line-height: 1; /* Adjust the line spacing (1.4 is an example value) */
 }
 
-
-
+/* Ensure #education and #skills follow the size of the section */
 #education-skills {
   display: flex;
   gap: 20px; /* Space between the two columns */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 #education, #skills {
   flex: 1; /* Make both columns take equal width */
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: var(--padding); /* Match the padding of the section */
+  border-radius: var(--border-radius); /* Match the border-radius of the section */
+  box-shadow: var(--box-shadow); /* Match the shadow of the section */
+  margin: 0; /* Remove any extra margins */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+
+#education, #skills {
+  flex: 1; /* Make both columns take equal width */
+  background: white;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 }
 
 #education h2, #skills h2 {
   text-align: center;
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -262,10 +288,10 @@ h3 + h4 {
 }
 
 .project-card {
-  background: #f9f9f9;
+  background: var(--background-color);
   padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   text-align: center;
 }
 
@@ -288,6 +314,16 @@ h3 + h4 {
 @media (max-width: 768px) {
   .project-grid {
     grid-template-columns: 1fr; /* 1 column for small screens */
+  }
+
+  #education-skills {
+    flex-direction: column; /* Stack the columns vertically */
+  }
+
+  #education, #skills {
+    flex: none; /* Remove equal width */
+    width: 100%; /* Make each section take full width */
+    padding: 20px; /* Slightly reduce padding for smaller screens */
   }
 }
 
@@ -314,4 +350,31 @@ img {
 
 h1 {
   font-size: 2.5rem; /* Scales relative to the base font size */
+}
+
+/* TGK1 */
+/* Default styling for larger screens */
+.skills-grid div, .project-card {
+  background: var(--background-color); /* Optional: Add a background for better visibility */
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow); /* Optional: Add a subtle shadow */
+  text-align: center;
+}
+
+/* Adjust styling for smaller screens */
+@media (max-width: 768px) {
+  .skills-grid div, .project-card {
+    padding: 10px; /* Reduce padding for smaller screens */
+    border-radius: 5px; /* Smaller border radius */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid div, .project-card {
+    padding: 8px; /* Further reduce padding for very small screens */
+    border-radius: 3px; /* Even smaller border radius */
+    box-shadow: none; /* Remove shadow for simplicity */
+  }
 }
