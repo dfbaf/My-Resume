@@ -378,3 +378,11 @@ h1 {
     box-shadow: none; /* Remove shadow for simplicity */
   }
 }
+
+.job-title {
+  word-wrap: break-word; /* Break long words if necessary */
+  white-space: normal; /* Allow text to wrap to the next line */
+  line-height: 1.5; /* Add spacing between lines for better readability */
+  margin: 10px 0; /* Add spacing around the title */
+  font-weight: bold; /* Make the title stand out */
+}
