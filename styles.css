@@ -119,8 +119,9 @@ h2 {
 /* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Create 2 equal columns */
-  gap: 20px; /* Add spacing between grid items */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible columns */
+  gap: 20px; /* Space between grid items */
+  margin-top: 20px;
 }
 
 .skills-grid div {
@@ -128,6 +129,23 @@ h2 {
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  text-align: center;
+}
+
+.skills-grid h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.skills-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-grid ul li {
+  font-size: 1em;
+  margin: 5px 0;
 }
 
 /* Experience & Projects */
