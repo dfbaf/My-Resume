@@ -1,6 +1,6 @@
 /* Base Styles */
 :root {
-  --primary-color: #3498db;
+  --primary-color: #0c8bdf;
   --secondary-color: #2c3e50;
   --text-color: #333;
   --background-color: #f9f9f9;
@@ -34,10 +34,20 @@ p {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-  color: white;
-  padding: 40px 0;
-  text-align: center;
+  background: linear-gradient(120deg, #e0e7ff 0%, #f3f8ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #0077b5 0%, transparent 70%);
+  opacity: 0.12;
+  z-index: 0;
 }
 
 header h1 {
@@ -46,9 +56,11 @@ header h1 {
 }
 
 .subtitle {
-  font-size: 1.2em;
-  opacity: 0.9;
-  margin: 10px 0;
+  font-size: 1.1em;
+  color: #0077b5;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 1.2s;
 }
 
 .contact-info {
@@ -60,15 +72,62 @@ header h1 {
   margin: 0 15px;
 }
 
+.contact-info a {
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 6px;
+  transition: color 0.2s;
+}
+
+.contact-info a:hover {
+  color: #005983;
+  text-decoration: underline;
+}
+
+.contact-info i {
+  margin-right: 4px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  justify-content: center; /* Add this line to center the links */
+}
+
 .social-links a {
-  color: white;
-  font-size: 1.5em;
-  margin: 0 10px;
-  transition: opacity 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #f3f6fa;
+  color: #222;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  font-size: 1em;
+  border: 2px solid #0077b5; /* Add this line for a blue border */
 }
 
 .social-links a:hover {
-  opacity: 0.8;
+  background: #0077b5;
+  color: #fff;
+  border-color: #005983; /* Optional: darker border on hover */
+}
+
+.social-links a .fa-github {
+  color: #333;
+}
+
+.social-links a .fa-linkedin {
+  color: #0077b5;
+}
+
+.social-links a:hover .fa-github,
+.social-links a:hover .fa-linkedin {
+  color: #fff;
 }
 
 /* Navigation Bar */
@@ -76,6 +135,7 @@ header h1 {
   background: var(--secondary-color);
   padding: 10px 0;
   box-shadow: var(--box-shadow);
+  z-index: 1000; /* Make sure it stays above other content */
 }
 
 .navbar ul {
@@ -120,13 +180,27 @@ section {
   box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-h2 {
-  color: var(--secondary-color);
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 10px;
-  margin-top: 0;
+section h2 {
+  text-align: left !important;
 }
 
+h2 {
+  margin-top: 0px;
+  margin-bottom: 24px;
+  font-size: 2em;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+h2 i {
+  margin-right: 10px;
+  color: #0077b5;
+}
 
 /* Skills Grid */
 .skills-grid {
@@ -176,10 +250,75 @@ ul {
 
 /* Footer */
 footer {
+  background: #f8fafc;
+  border-top: 1px solid #e1e9f0;
+  padding: 32px 0 20px 0;
+  margin-top: 48px;
+}
+
+.footer-container {
+  max-width: 700px;
+  margin: 0 auto;
   text-align: center;
-  padding: var(--padding);
-  background: var(--secondary-color);
-  color: white;
+  box-shadow: 0 2px 24px rgba(0,119,181,0.04);
+  border-radius: 18px;
+  padding: 24px 0 12px 0;
+  background: #f8fafc;
+}
+
+.footer-btn {
+  display: inline-block;
+  background: #0077b5;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 28px;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px rgba(0,119,181,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-btn:hover {
+  background: #005983;
+  box-shadow: 0 8px 32px rgba(0,119,181,0.18);
+  transform: translateY(-3px) scale(1.04);
+}
+
+.footer-btn i {
+  margin-right: 10px;
+  font-size: 1.2em;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+
+.footer-btn:hover i {
+  transform: translateX(4px) scale(1.15);
+}
+
+.footer-meta {
+  color: #555;
+  font-size: 1em;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+.footer-meta:hover {
+  color: #0077b5;
+}
+
+.footer-host i {
+  color: #333;
+  margin: 0 2px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.footer-meta:hover .footer-host i {
+  color: #0077b5;
+  transform: rotate(-12deg) scale(1.2);
 }
 
 .btn {
@@ -195,6 +334,106 @@ footer {
 
 .btn:hover {
   background: #2980b9;
+}
+
+/* Recognition Cards */
+.recognition-card {
+  background: #f3f6fa;
+  border: 1px solid #e1e9f0;
+  border-radius: 12px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-align: center;
+  padding: 28px 10px 20px 10px;
+  min-width: 0;
+  min-height: 220px;      /* Set a minimum height */
+  height: 100%;           /* Fill the grid cell */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.recognition-card:hover {
+  box-shadow: 0 8px 32px rgba(0,119,181,0.12);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.recognition-card a {
+  text-decoration: none !important;
+}
+
+.recognition-content i {
+  margin-bottom: 12px;
+}
+
+.recognition-content h3 {
+  margin: 10px 0 0 0;
+  font-size: 1.1em;
+  color: #0077b5;
+}
+
+.recognition-desc {
+  color: #444;
+  font-size: 1em;
+  margin-bottom: 18px;
+}
+
+.recognition-btn {
+  background: #0077b5;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.3em;
+  margin: 18px auto 0 auto;
+  position: relative;
+  transition: background 0.2s;
+  animation: pulse 2s infinite;
+  padding: 0; /* Ensure no extra padding */
+}
+
+.recognition-btn i {
+  margin: 0;           /* Remove any margin */
+  display: flex;       /* Flex to center icon */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  font-size: 1.3em;    /* Ensure icon is sized properly */
+}
+
+.recognition-btn:hover {
+  background: #005983;
+  animation: none;
+}
+
+.recognition-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #222;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.recognition-btn:hover::after {
+  opacity: 1;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(12,139,223,0.3);}
+  70% { box-shadow: 0 0 0 10px rgba(12,139,223,0);}
+  100% { box-shadow: 0 0 0 0 rgba(12,139,223,0);}
 }
 
 /* Responsive */
@@ -224,6 +463,12 @@ footer {
   section {
     padding: 15px; /* Reduce padding for smaller screens */
   }
+
+  .skills-grid div, .project-card {
+    padding: 10px; /* Reduce padding for smaller screens */
+    border-radius: 5px; /* Smaller border radius */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for smaller screens */
+  }
 }
 
 #education h3, #education p {
@@ -241,14 +486,16 @@ footer {
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-#education, #skills {
-  flex: 1; /* Make both columns take equal width */
-  background: white;
-  padding: var(--padding); /* Match the padding of the section */
-  border-radius: var(--border-radius); /* Match the border-radius of the section */
-  box-shadow: var(--box-shadow); /* Match the shadow of the section */
-  margin: 0; /* Remove any extra margins */
-  box-sizing: border-box; /* Ensure padding is included in the width */
+#education-skills > div {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.skills-single-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 
@@ -283,8 +530,18 @@ h3 + h4 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible columns */
-  gap: 20px; /* Space between grid items */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 40px;
+  margin-top: 32px;
+  justify-items: stretch; /* Stretch cards to fill columns */
+  align-items: stretch;   /* Stretch cards to fill rows */
+}
+
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+    gap: 24px;
+  }
 }
 
 .project-card {
@@ -341,6 +598,12 @@ h3 + h4 {
     font-size: 0.9em; /* Smaller button text */
     padding: 10px 15px; /* Adjust button padding */
   }
+
+  .skills-grid div, .project-card {
+    padding: 8px; /* Further reduce padding for very small screens */
+    border-radius: 3px; /* Even smaller border radius */
+    box-shadow: none; /* Remove shadow for simplicity */
+  }
 }
 
 img {
@@ -385,4 +648,81 @@ h1 {
   line-height: 1.5; /* Add spacing between lines for better readability */
   margin: 10px 0; /* Add spacing around the title */
   font-weight: bold; /* Make the title stand out */
+}
+
+.skills-columns {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  column-gap: 40px;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.skills-columns > li {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid; /* For Safari/older browsers */
+  page-break-inside: avoid;           /* For print */
+  list-style-type: none;
+  margin-bottom: 1.5em;
+}
+
+.skills-columns h3 {
+  margin-bottom: 0.5em;
+  margin-top: 0;
+  font-size: 1.1em;
+  color: var(--secondary-color);
+}
+
+.skills-columns ul {
+  list-style-type: disc;
+  list-style-position: outside;   /* Ensures bullet is outside the text block */
+  padding-left: 1.5em;            /* Adds space for the bullet */
+  margin-left: 0;                 /* Prevents double indentation */
+}
+
+.skills-columns ul li {
+  color: var(--text-color); /* Ensures bullet and text are dark */
+  margin-bottom: 0.5em;
+}
+
+.job h3,
+.job .job-title {
+  margin-bottom: 0.2em;
+  margin-top: 0;
+}
+
+#recognition .project-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#recognition .project-card {
+  width: 100%;
+  max-width: 10000px;   /* Wider on large screens */
+  min-width: 260px;   /* Prevents being too narrow */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  #recognition .project-card {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
