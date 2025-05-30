@@ -1,4 +1,4 @@
-# NHMResume
+# DBBAF Resume
 
 A modern, responsive resume website for Nur Hidayah Merican, built with HTML and CSS.
 
