@@ -530,11 +530,11 @@ h3 + h4 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
   margin-top: 32px;
-  justify-items: stretch; /* Stretch cards to fill columns */
-  align-items: stretch;   /* Stretch cards to fill rows */
+  justify-items: stretch;
+  align-items: stretch;
 }
 
 @media (max-width: 1024px) {
